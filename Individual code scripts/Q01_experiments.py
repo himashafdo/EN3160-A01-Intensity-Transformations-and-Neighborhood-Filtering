@@ -31,11 +31,9 @@ im = np.array(Image.open(path).convert('L'))
 
 breakpoints = [
     [0, 0],
-    [50, 50],
-    [50, 100],
-    [150, 255],
-    [150, 150],
-    [255, 255]
+    [100, 130],
+    [200, 210],
+    [255, 255],
 ]
 
 out = intensity_transform(im, breakpoints)
@@ -64,5 +62,5 @@ ax[2].imshow(out.astype(np.uint8), cmap='gray')
 ax[2].set_title('Transformed Image')
 ax[2].axis('off')
 
-plt.savefig("results/result_for_given_bps.png", dpi=150)
+plt.savefig("results/experimented_01.png", dpi=150)
 plt.show()
