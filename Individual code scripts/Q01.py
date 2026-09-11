@@ -5,6 +5,13 @@ from PIL import Image
 
 
 def intensity_transform(im, breakpoints):
+    """
+        Here I defined the intensity function to precompute values for 
+        each pixel value in the range [0, 255] and store them in a lookup table, 
+        since it is much faster than computing value for the pixel value each time since the transformation
+        function doesn't change.
+        
+    """
 
     bp = np.asarray(breakpoints, dtype=np.float64)
     xs, ys = bp[:, 0], bp[:, 1]
