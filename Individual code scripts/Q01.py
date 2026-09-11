@@ -9,9 +9,6 @@ def intensity_transform(im, breakpoints):
     bp = np.asarray(breakpoints, dtype=np.float64)
     xs, ys = bp[:, 0], bp[:, 1]
 
-    if np.any(np.diff(xs) < 0):
-        raise ValueError("breakpoint x-values must be non-decreasing")
-
     lut = np.zeros(256, dtype=np.float64)
 
     
@@ -71,7 +68,6 @@ breakpoints_given = [
     [0,   0],
     [50,  50],
     [100, 150],
-    [150, 255],
     [150, 150],
     [255, 255],
 ]
